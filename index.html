@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 21st Birthday, Marc ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #0d0612;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section {
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* =========================
+   STARS
+========================= */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .2; }
+    to { opacity: 1; }
+}
+
+/* =========================
+   OPENING
+========================= */
+
+#opening {
+    background:
+        radial-gradient(circle at center,
+        #4b163f,
+        #170a20 45%,
+        #07030b);
+    text-align: center;
+}
+
+.opening-small {
+    font-size: 16px;
+    letter-spacing: 5px;
+    opacity: .8;
+    margin-bottom: 20px;
+}
+
+.opening-title {
+    font-size: clamp(45px, 12vw, 90px);
+    color: #ffd6e7;
+    text-shadow:
+        0 0 10px #ff77aa,
+        0 0 30px #ff3f91;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow:
+            0 0 10px #ff77aa,
+            0 0 20px #ff3f91;
+    }
+
+    to {
+        text-shadow:
+            0 0 20px #fff,
+            0 0 50px #ff3f91;
+    }
+}
+
+.opening-text {
+    max-width: 600px;
+    margin: 25px auto;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #f7dce8;
+}
+
+.start-btn {
+    margin-top: 30px;
+    padding: 16px 30px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff4f9a, #b83280);
+    color: white;
+    font-size: 17px;
+    box-shadow: 0 10px 30px rgba(255, 63, 145, .4);
+    transition: .3s;
+}
+
+.start-btn:hover {
+    transform: scale(1.08);
+}
+
+/* =========================
+   HEARTS
+========================= */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 20px;
+    animation: floatHeart 6s linear forwards;
+    pointer-events: none;
+    z-index: 20;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) scale(.7);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(30deg) scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+#birthday {
+    background:
+        linear-gradient(
+            rgba(25,5,22,.65),
+            rgba(13,4,18,.95)
+        ),
+        radial-gradient(circle, #9b285d, #160617);
+}
+
+.twenty-one {
+    font-size: clamp(100px, 25vw, 220px);
+    font-weight: 900;
+    line-height: .8;
+    color: #ffd1e4;
+    text-shadow:
+        0 0 20px #ff4f9a,
+        0 0 60px #ff267f;
+}
+
+.birthday-title {
+    font-size: clamp(30px, 7vw, 60px);
+    margin-top: 35px;
+}
+
+.marc-name {
+    color: #ff91bb;
+}
+
+.birthday-subtitle {
+    margin-top: 20px;
+    font-size: 19px;
+    text-align: center;
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+/* =========================
+   CAKE
+========================= */
+
+.cake {
+    margin-top: 50px;
+    position: relative;
+    width: 190px;
+    height: 150px;
+}
+
+.cake-top {
+    position: absolute;
+    bottom: 55px;
+    width: 190px;
+    height: 55px;
+    background: #ff91b9;
+    border-radius: 50%;
+}
+
+.cake-body {
+    position: absolute;
+    bottom: 0;
+    width: 190px;
+    height: 80px;
+    background: #ff6f9f;
+    border-radius: 10px 10px 25px 25px;
+}
+
+.candle {
+    position: absolute;
+    width: 13px;
+    height: 50px;
+    background: #fff;
+    bottom: 100px;
+    border-radius: 5px;
+}
+
+.candle:nth-child(1) { left: 42px; }
+.candle:nth-child(2) { left: 88px; }
+.candle:nth-child(3) { right: 42px; }
+
+.flame {
+    position: absolute;
+    width: 17px;
+    height: 24px;
+    background: #ffd166;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    top: -25px;
+    left: -2px;
+    box-shadow: 0 0 25px #ffd166;
+    animation: flame .5s infinite alternate;
+}
+
+@keyframes flame {
+    from { transform: rotate(-45deg) scale(1); }
+    to { transform: rotate(-40deg) scale(1.15); }
+}
+
+/* =========================
+   MEMORIES
+========================= */
+
+#photos {
+    background: linear-gradient(#160714, #09030d);
+}
+
+.section-title {
+    font-size: clamp(35px, 8vw, 60px);
+    color: #ffb1cf;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.7;
+    color: #e8cbd8;
+    margin-bottom: 40px;
+}
+
+/* PHOTO GRID */
+
+.photo-grid {
+    width: 100%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.photo-card {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #241021;
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    transition: .4s;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.photo-card:hover img {
+    transform: scale(1.08);
+}
+
+.photo-number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0,0,0,.55);
+    padding: 7px 12px;
+    border-radius: 20px;
+}
+
+/* =========================
+   VIDEOS
+========================= */
+
+#videos {
+    background:
+        radial-gradient(circle at top,
+        #4a1237,
+        #0d0611 55%);
+}
+
+.video-grid {
+    width: 100%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.video-card {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    padding: 12px;
+    border-radius: 22px;
+    backdrop-filter: blur(10px);
+}
+
+.video-card video {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+
+.video-card h3 {
+    padding: 15px 5px 5px;
+    color: #ffb1cf;
+}
+
+.video-card p {
+    padding: 5px;
+    color: #d8c0ce;
+    font-size: 14px;
+}
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+#letter {
+    background: linear-gradient(
+        135deg,
+        #2a0b20,
+        #09030d
+    );
+}
+
+.envelope {
+    width: 280px;
+    height: 190px;
+    background: #ff6f9f;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 20px 60px rgba(255,50,130,.25);
+    transition: .5s;
+}
+
+.envelope:hover {
+    transform: scale(1.05);
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-top: 100px solid #ff9abb;
+}
+
+.envelope-text {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.letter-content {
+    display: none;
+    width: 100%;
+    max-width: 700px;
+    margin-top: 40px;
+    background: #fff4f8;
+    color: #572238;
+    padding: 35px;
+    border-radius: 20px;
+    line-height: 1.9;
+    text-align: left;
+    box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    animation: appear .7s ease;
+}
+
+.letter-content.show {
+    display: block;
+}
+
+.letter-content h2 {
+    color: #c53870;
+    margin-bottom: 20px;
+}
+
+.signature {
+    margin-top: 25px;
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* =========================
+   21 THINGS
+========================= */
+
+#things {
+    background: #10050d;
+}
+
+.things-grid {
+    max-width: 900px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.thing {
+    padding: 22px 12px;
+    background: rgba(255,105,160,.09);
+    border: 1px solid rgba(255,160,200,.15);
+    border-radius: 18px;
+    transition: .3s;
+}
+
+.thing:hover {
+    transform: translateY(-5px);
+    background: rgba(255,105,160,.16);
+}
+
+.thing span {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.thing p {
+    font-size: 14px;
+    color: #e8cfda;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+#final {
+    background:
+        radial-gradient(circle,
+        #651c4a,
+        #150613 60%);
+    text-align: center;
+}
+
+.final-heart {
+    font-size: 100px;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.final-title {
+    font-size: clamp(40px, 9vw, 75px);
+    color: #ffd2e4;
+    margin: 25px 0;
+}
+
+.final-text {
+    max-width: 650px;
+    line-height: 1.9;
+    font-size: 18px;
+    color: #f1dbe5;
+}
+
+.replay {
+    margin-top: 35px;
+    padding: 15px 28px;
+    border-radius: 50px;
+    background: #ff5b9d;
+    color: white;
+    font-size: 16px;
+}
+
+/* MUSIC BUTTON */
+
+.music-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 100;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #ff5b9d;
+    color: white;
+    font-size: 22px;
+    box-shadow: 0 8px 25px rgba(255,50,130,.4);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 700px) {
+
+    section {
+        padding: 70px 15px;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .things-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .letter-content {
+        padding: 25px 20px;
+    }
+}
+
+@media(max-width: 430px) {
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+        max-width: 330px;
+    }
+
+    .things-grid {
+        grid-template-columns: 1fr;
+        max-width: 330px;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- STARS -->
+<div class="stars" id="stars"></div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+    <!-- CHANGE THIS TO YOUR SONG -->
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()" id="musicButton">
+    🎵
+</button>
+
+
+<!-- =========================
+     OPENING
+========================= -->
+
+<section id="opening">
+
+    <div class="opening-small">
+        A LITTLE SURPRISE FOR YOU...
+    </div>
+
+    <h1 class="opening-title">
+        For Marc ❤️
+    </h1>
+
+    <p class="opening-text">
+        I made something special for the person
+        who has made so many moments of my life
+        worth remembering.
+    </p>
+
+    <button class="start-btn" onclick="startExperience()">
+        Open Your Birthday Surprise 💌
+    </button>
+
+</section>
+
+
+<!-- =========================
+     BIRTHDAY
+========================= -->
+
+<section id="birthday">
+
+    <div class="twenty-one">
+        21
+    </div>
+
+    <h1 class="birthday-title">
+        Happy Birthday,
+        <span class="marc-name">Marc!</span>
+    </h1>
+
+    <p class="birthday-subtitle">
+        Happy 21st birthday to the person who holds
+        such a special place in my heart. ❤️
+        <br><br>
+        Today isn't just about celebrating another year.
+        It's about celebrating <b>you</b>.
+    </p>
+
+    <div class="cake">
+
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+
+        <div class="cake-top"></div>
+        <div class="cake-body"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PHOTOS
+========================= -->
+
+<section id="photos">
+
+    <h2 class="section-title">
+        Our Little Memories 📸
+    </h2>
+
+    <p class="section-description">
+        Six little pieces of our story.
+        Every picture holds a moment that I never
+        want to forget.
+    </p>
+
+    <div class="photo-grid">
+
+        <div class="photo-card">
+            <img src="photos/photo1.jpg">
+            <div class="photo-number">01 ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo2.jpg">
+            <div class="photo-number">02 ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo3.jpg">
+            <div class="photo-number">03 ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo4.jpg">
+            <div class="photo-number">04 ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo5.jpg">
+            <div class="photo-number">05 ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo6.jpg">
+            <div class="photo-number">06 ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo7.jpg">
+            <div class="photo-number">07 ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo8.jpg">
+            <div class="photo-number">08 ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo9.jpg">
+            <div class="photo-number">09 ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo10.jpg">
+            <div class="photo-number">10 ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo11.jpg">
+            <div class="photo-number">11 ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo12.jpg">
+            <div class="photo-number">12 ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo13.jpg">
+            <div class="photo-number">13 ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo14.jpg">
+            <div class="photo-number">14 ❤️</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VIDEOS
+========================= -->
+
+<section id="videos">
+
+    <h2 class="section-title">
+        Six Moments With You 🎥
+    </h2>
+
+    <p class="section-description">
+        These aren't just videos.
+        They're little pieces of time that I get to
+        keep forever.
+    </p>
+
+    <div class="video-grid">
+
+        <div class="video-card">
+            <video controls playsinline>
+                <source src="videos/video1.mp4" type="video/mp4">
+            </video>
+            <h3>Our Moment #1 ❤️</h3>
+            <p>A memory I'll always keep close to my heart — our very first meeting at my home. Hahaha, I still remember how everything started that day. At the time, I didn't know that such a simple moment would eventually become the beginning of so many beautiful memories with you. Looking back now, it makes me smile knowing that the person I met that day would become someone so special to me. It's funny how one ordinary day can turn into a memory you'll never want to forget. I'm really glad our story started there. ❤️</p>
+        </div>
+
+        <div class="video-card">
+            <video controls playsinline>
+                <source src="videos/video2.mp4" type="video/mp4">
+            </video>
+            <h3>Our Moment #2 ❤️</h3>
+            <p>1st date we had at lake. One of those little moments that made me smile without even realizing it. There are moments with you that may seem simple, but somehow they become the ones I remember the most. Being together, laughing, doing random things, and just enjoying each other's company is something I truly treasure. I love how we don't always need anything special to have a good time. Sometimes, simply being beside you is already enough to make an ordinary day feel special.❤️</p>
+        </div>
+
+        <div class="video-card">
+            <video controls playsinline>
+                <source src="videos/video3.mp4" type="video/mp4">
+            </video>
+            <h3>Our Moment #3 ❤️</h3>
+            <p>A little piece of our story that I could watch over and over again. Looking at these memories reminds me of how many little moments we've already shared together. The smiles, the silly pictures, the random poses, and all the times we were simply enjoying being together mean more to me than you probably realize. Every picture captures a different version of us, but they all have one thing in common — they remind me of how happy I am to have you in my life. 🥹❤️</p>
+        </div>
+
+        <div class="video-card">
+            <video controls playsinline>
+                <source src="videos/video4.mp4" type="video/mp4">
+            </video>
+            <h3>Our Moment #4 ❤️</h3>
+            <p>Another memory worth keeping forever. I love looking back at moments like this because they remind me of all the happiness we've shared. Sometimes we don't realize how special a moment is until we look back at it later. These little memories, our smiles, our random pictures, and even our silly moments have slowly become some of my favorite things to look back on. I'm grateful for every single one of them, because each memory is another little piece of our story that I'll always carry with me.</p>
+        </div>
+
+        <div class="video-card">
+            <video controls playsinline>
+                <source src="videos/video5.mp4" type="video/mp4">
+            </video>
+            <h3>Our Moment #5 ❤️</h3>
+            <p>The expensive one of our date HAHAH remember ang mahal ng milktea sa cafe na to jusmiyo pangit pa ugali ng staff. HAHAHA, looking at these memories makes me realize just how many silly, cute, and unforgettable moments we've already had together. From taking random pictures to simply enjoying each other's company, every little moment somehow becomes special when I'm with you. I love that we can be ourselves around each other and still find reasons to laugh and smile. These are the kinds of memories I hope we'll keep making for many more years, because honestly, I don't think I'll ever get tired of making memories with you. 🥹❤️</p>
+        </div>
+
+        <div class="video-card">
+            <video controls playsinline>
+                <source src="videos/video6.mp4" type="video/mp4">
+            </video>
+            <h3>Our Moment #6 ❤️</h3>
+            <p>And a memory I'll treasure. Lastly our 1st christmas. And a memory I'll treasure, especially because it's one more little chapter of our story. Looking back at everything we've shared makes me realize how much we've already experienced together. From our first meeting to all the random days, laughs, pictures, adventures, and little moments in between, every memory has slowly become a part of something really special to me. I don't know what the future will bring, but I know I want to keep making moments like these with you. More laughs, more pictures, more random memories, more adventures, and hopefully many more birthdays together. This may only be one little video, but to me, it's another beautiful memory of us. ❤️ </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LOVE LETTER
+========================= -->
+
+<section id="letter">
+
+    <h2 class="section-title">
+        I Have Something To Tell You 💌
+    </h2>
+
+    <p class="section-description">
+        Tap the envelope.
+    </p>
+
+    <div class="envelope" onclick="openLetter()">
+
+        <div class="envelope-text">
+            💌 OPEN ME
+        </div>
+
+    </div>
+
+
+    <div class="letter-content" id="loveLetter">
+
+        <h2>To My Love, Marc ❤️</h2>
+
+        <p>
+            Happy 21st birthday, my love.
+        </p>
+
+        <br>
+
+        <p>
+            I don't know if words will ever be enough to
+            explain how thankful I am that you became
+            such an important part of my life.
+        </p>
+
+        <br>
+
+        <p>
+            We've already shared so many memories together,
+            and when I look back at all the little moments,
+            I realize just how lucky I am to have someone
+            like you beside me.
+        </p>
+
+        <br>
+
+        <p>
+            Thank you for the laughs, the random moments,
+            the memories, and simply for being you.
+        </p>
+
+        <br>
+
+        <p>
+            As you enter another year of your life,
+            I hope you achieve everything you're dreaming of.
+            I hope you continue to grow, smile, and become
+            the person you want to be.
+        </p>
+
+        <br>
+
+        <p>
+            And hopefully, I get to be there beside you
+            through many more birthdays, adventures,
+            silly moments, and memories.
+        </p>
+
+        <br>
+
+        <p>
+            Happy 21st birthday, Marc.
+            You are loved more than you know. ❤️
+        </p>
+
+        <div class="signature">
+            Forever yours,<br>
+            Your love ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     21 THINGS
+========================= -->
+
+<section id="things">
+
+    <h2 class="section-title">
+        21 Little Things I Love About You ❤️
+    </h2>
+
+    <p class="section-description">
+        Because you're turning 21,
+        here are 21 reasons why you're special to me.
+    </p>
+
+    <div class="things-grid">
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Your smile</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Your laugh</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>The way you make me smile</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Your personality</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Your little jokes</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>The way you care</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Your patience</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Your presence</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Your hugs</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Your voice</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Your kindness</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Your little habits</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>The way you make ordinary days special</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Your determination</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Your dreams</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Your beautiful heart</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>The memories we make</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>The way you understand me</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>The comfort you give me</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Simply being yourself</p>
+        </div>
+
+        <div class="thing">
+            <span>❤️</span>
+            <p>Because you're you.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section id="final">
+
+    <div class="final-heart">
+        ❤️
+    </div>
+
+    <h1 class="final-title">
+        Happy 21st, Marc!
+    </h1>
+
+    <p class="final-text">
+        I hope this little website reminds you of
+        how many beautiful memories we've already made
+        together.
+        <br><br>
+
+        And this isn't the end of our story.
+        It's just another chapter.
+        <br><br>
+
+        Here's to more laughs,
+        more adventures,
+        more memories,
+        and hopefully many more birthdays together.
+        <br><br>
+
+        <b>I love you. ❤️</b>
+    </p>
+
+    <button class="replay" onclick="location.href='#opening'">
+        ↻ Start From The Beginning
+    </button>
+
+</section>
+
+
+<script>
+
+/* =========================
+   STARS
+========================= */
+
+const stars = document.getElementById("stars");
+
+for(let i = 0; i < 100; i++){
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+
+    star.style.animationDelay =
+        Math.random() * 2 + "s";
+
+    stars.appendChild(star);
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = ["❤️","💕","💗","💖","💘","💞"];
+
+    heart.innerHTML =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 25) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 9000);
+}
+
+setInterval(createHeart, 800);
+
+
+/* =========================
+   START EXPERIENCE
+========================= */
+
+function startExperience(){
+
+    const music =
+        document.getElementById("music");
+
+    music.play().catch(() => {});
+
+    document.getElementById("birthday")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+    confetti();
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+function toggleMusic(){
+
+    const music =
+        document.getElementById("music");
+
+    const button =
+        document.getElementById("musicButton");
+
+    if(music.paused){
+
+        music.play();
+
+        button.innerHTML = "🔊";
+
+    }else{
+
+        music.pause();
+
+        button.innerHTML = "🎵";
+    }
+}
+
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+function openLetter(){
+
+    const letter =
+        document.getElementById("loveLetter");
+
+    letter.classList.toggle("show");
+
+    if(letter.classList.contains("show")){
+
+        letter.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        confetti();
+    }
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function confetti(){
+
+    const symbols = [
+        "❤️",
+        "💕",
+        "✨",
+        "🎉",
+        "💖",
+        "🎂"
+    ];
+
+    for(let i = 0; i < 35; i++){
+
+        const item =
+            document.createElement("div");
+
+        item.innerHTML =
+            symbols[
+                Math.floor(
+                    Math.random() * symbols.length
+                )
+            ];
+
+        item.style.position = "fixed";
+        item.style.left =
+            Math.random() * 100 + "vw";
+
+        item.style.top = "-30px";
+
+        item.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+        item.style.zIndex = "999";
+
+        item.style.pointerEvents = "none";
+
+        document.body.appendChild(item);
+
+        const duration =
+            1500 + Math.random() * 2500;
+
+        item.animate(
+            [
+                {
+                    transform:
+                        "translateY(0) rotate(0deg)",
+                    opacity: 1
+                },
+                {
+                    transform:
+    `translateY(110vh) rotate(${Math.random()*720}deg)`,
+                }
+            ],
+            {
+                duration: duration,
+                easing: "ease-out"
+            }
+        );
+
+        setTimeout(() => {
+            item.remove();
+        }, duration);
+    }
+}
+
+</script>
+
+</body>
+</html>
